@@ -9,10 +9,9 @@ import com.nhaarman.mockito_kotlin.whenever
 import org.amshove.kluent.itReturns
 import org.amshove.kluent.shouldEqual
 import org.amshove.kluent.shouldNotBeNull
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
-import java.time.Instant
+import java.time.LocalDate
 import java.time.ZonedDateTime
 
 class CustomerControllerTest {
@@ -27,13 +26,11 @@ class CustomerControllerTest {
 
     @Test
     fun `gets customer data`() {
-        // given
-        val now = ZonedDateTime.now()
 
         val expectedCustomer = Customer(
                 firstName = "greg",
                 lastName = "woodfill",
-                dateTime = now)
+                birthDate = LocalDate.now())
 
         whenever(customerService.lookupCustomer(100))
                 .itReturns(expectedCustomer)
