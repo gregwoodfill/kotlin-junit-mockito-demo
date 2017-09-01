@@ -31,3 +31,4 @@ classes/
 *.iws
 
 .git
+.gradle/
